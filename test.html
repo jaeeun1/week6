@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>띵언전시회 테스트 1</title>
+	<style type="text/css">
+
+		body{margin: 0; display: fixed; flex-wrap: wrap; overflow: hidden;background: url("pattern.png"); position: absolute;}
+
+		.floating{width: 100vw; height: 100vh; background: black;
+		position: absolute; display: none; color: white; text-align: center;}
+
+		.img02{width: 28vw;}
+		.img05{width: 18vw;}
+		.img03{width: 16vw;}
+		.img04{width: 15.6vw;}
+		.img06{width: 17.4vw;}
+		.person{position: absolute; width: 40vw; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+		.saying{position: absolute; top: 70%; left: 50%; transform: translate(-50%, -50%);}
+
+		div.F1{position: absolute; left: 15.3vw; top: 62.8vh;}
+		div.F2{position: absolute; left: 26.4vw; top: 32.6vh;}
+		div.F3{position: absolute; left: 45.4vw; top: 38.3vh;}
+		div.F4{position: absolute; left: 55.1vw; top: 12.9vh;}
+		div.F5{position: absolute; left: 63.6vw; top: 37.7vh;}
+		div.F6{position: absolute; left: 45.5vw; top: 62.7vh;}
+		div.F7{position: absolute; left: 62.8vw; top: 62.5vh;}
+
+
+		#oneFloat{}
+		@keyframes fadeinout{
+			0%{opacity: 0;}
+            20%{opacity: 1;}
+            80%{opacity: 1;}
+            100%{opacity: 0;}
+		}
+
+	</style>
+</head>
+<body>
+	<div>
+	<div class="F1"><img id="go1" class="img02" src="frame02.png"></div>
+	<div class="F2"><img class="img05" src="frame05.png"></div>
+	<div class="F3"><img class="img03" src="frame03.png"></div>	
+	<div class="F4"><img class="img04" src="frame04.png"></div>	
+	<div class="F5"><img class="img04" src="frame04.png"></div>	
+	<div class="F6"><img class="img04" src="frame04.png"></div>	
+	<div class="F7"><img id="mygo" class="img06" src="frame06.png"></div>
+		
+	<div class="floating" id="oneFloat">
+		<img class="person" src="Freud.png">
+		<h1 class="saying">명언입니다.</h1>
+	</div>
+
+	</div>
+	<script type="text/javascript">
+		go1.onclick = function(){
+			oneFloat.style.display = "flex";
+			oneFloat.style.animation = "fadeinout 4s";
+		}
+		oneFloat.onanimationend = function(){
+			oneFloat.style.display = "none";
+		}
+
+
+
+		mygo.onclick = function(){
+			let	mysaying = prompt('나만의 명언을 입력해주세요.');
+			oneFloat.style.display = "flex";
+			oneFloat.style.animation = "fadeinout 4s";			
+		}
+
+
+
+
+	</script>
+</body>
+</html>
